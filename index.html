@@ -3,41 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZipAppointments — Book Local Services</title>
+    <title>ZipAppointments.com — Book Trusted Services Near You</title>
+    <meta name="description" content="Book appointments with local professionals for beauty, wellness, home services, auto repair, and more. Trusted and easy booking.">
     <style>
-        body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background-color: #f9f9f9; }
-        header { background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; height: 60vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #f9f9f9; }
+        header { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; height: 70vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         header h1 { font-size: 3em; margin: 0; }
-        header p { font-size: 1.2em; margin-top: 10px; }
-        .search-bar { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        header p { font-size: 1.3em; margin-top: 15px; }
+        .search-bar { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .search-bar input, .search-bar select, .search-bar button { padding: 12px; border: none; border-radius: 4px; }
         .search-bar input, .search-bar select { width: 200px; }
         .search-bar button { background-color: #ff3366; color: white; cursor: pointer; }
         .search-bar button:hover { background-color: #e82a59; }
 
-        .categories { padding: 50px 20px; max-width: 1200px; margin: auto; }
-        .categories h2 { text-align: center; margin-bottom: 30px; }
+        .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        .section h2 { text-align: center; margin-bottom: 40px; }
         .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .category-card { background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; }
+        .category-card { background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.05); transition: 0.3s; }
         .category-card:hover { transform: translateY(-5px); }
         .category-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px; }
-        .category-card h3 { margin: 10px 0 0; }
+        .category-card h3 { margin-top: 10px; }
 
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        .video-container { text-align: center; margin: 60px 0; }
+        .video-container iframe { width: 100%; max-width: 720px; height: 405px; border: none; }
+
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .feature { background-color: #ffffff; border-radius: 8px; padding: 30px; text-align: center; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+        .feature h4 { margin-top: 15px; }
+       
+        footer { background-color: #222; color: #ccc; padding: 40px 20px; }
+        footer .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        footer h4 { color: white; }
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 8px; }
+        .social-icons a { margin-right: 10px; color: #ccc; font-size: 22px; text-decoration: none; }
+        .social-icons a:hover { color: #fff; }
+        .copyright { text-align: center; margin-top: 30px; color: #aaa; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2em; }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
 <header>
     <h1>ZipAppointments.com</h1>
-    <p>Find & Book the Best Local Services — Fast & Easy</p>
+    <p>Find & Book Trusted Local Services in Seconds</p>
     <div class="search-bar">
         <select>
             <option>Select Service</option>
-            <option>Hair & Beauty</option>
-            <option>Massage & Wellness</option>
-            <option>Home Cleaning</option>
-            <option>Auto Services</option>
+            <option>Beauty & Hair</option>
+            <option>Wellness & Massage</option>
+            <option>Cleaning</option>
+            <option>Auto Repair</option>
             <option>Plumbing</option>
         </select>
         <input type="text" placeholder="Enter your location">
@@ -45,24 +65,24 @@
     </div>
 </header>
 
-<section class="categories">
-    <h2>Popular Categories</h2>
+<section class="section">
+    <h2>Popular Service Categories</h2>
     <div class="category-grid">
         <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Beauty">
+            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920290.png" alt="Beauty">
             <h3>Hair & Beauty</h3>
         </div>
         <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3043/3043911.png" alt="Massage">
-            <h3>Massage & Wellness</h3>
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046890.png" alt="Massage">
+            <h3>Wellness & Massage</h3>
         </div>
         <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3476/3476184.png" alt="Cleaning">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Cleaning">
             <h3>Home Cleaning</h3>
         </div>
         <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/166/166526.png" alt="Auto">
-            <h3>Auto Services</h3>
+            <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Auto">
+            <h3>Auto Repair</h3>
         </div>
         <div class="category-card">
             <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Plumbing">
@@ -71,8 +91,66 @@
     </div>
 </section>
 
+<section class="video-container">
+    <h2>See How Easy It Is to Book!</h2>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+</section>
+
+<section class="section">
+    <h2>Why Choose ZipAppointments?</h2>
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-check-circle fa-3x"></i>
+            <h4>Verified Professionals</h4>
+            <p>Only trusted, verified service providers.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-calendar-check fa-3x"></i>
+            <h4>Easy Online Booking</h4>
+            <p>Book appointments in just a few clicks.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-headset fa-3x"></i>
+            <h4>24/7 Support</h4>
+            <p>Friendly customer support anytime.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-star fa-3x"></i>
+            <h4>Top-Rated Services</h4>
+            <p>Reviewed and rated by real customers.</p>
+        </div>
+    </div>
+</section>
+
 <footer>
-    &copy; 2025 ZipAppointments.com — Book trusted services with ease.
+    <div class="footer-container">
+        <div>
+            <h4>About Us</h4>
+            <p>ZipAppointments.com makes it simple to connect with trusted local service providers. Book beauty services, home services, auto repair, and more easily.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li>Beauty Appointments</li>
+                <li>Cleaning Services</li>
+                <li>Auto Repair Booking</li>
+                <li>Plumbing & Electrical</li>
+                <li>Wellness & Spa</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2025 ZipAppointments.com | SEO Keywords: Book Local Services, Beauty Booking, Home Services, Auto Repair Near Me, Wellness Appointments
+    </div>
 </footer>
 
 </body>
